@@ -1,0 +1,26 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check archive tools
+        run: command -v zip && command -v unzip
+      - name: Test current downloads
+        run: npm test
+      - name: Rebuild downloadable archives
+        run: npm run build
+      - name: Test newly generated downloads
+        run: npm test

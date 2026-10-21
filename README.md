@@ -74,7 +74,7 @@ The moon wallpapers are original artwork for this pack. The README hero visual i
 
 <br>
 
-The recipient ZIPs are already built and do not require Node.js. From a repository clone, Node.js 18+ and `zip` are needed only to rebuild the archives:
+The recipient ZIPs are already built and do not require Node.js. From a repository clone, Node.js 18+, `zip` and `unzip` are required to build and test the release archives:
 
 ```sh
 npm run build   # regenerate the three deterministic ZIP files and docs/PROMPTS.md
@@ -96,5 +96,19 @@ downloads/                          Tracked recipient-facing ZIP artifacts
 
 [`docs/TESTING.md`](docs/TESTING.md) records the manual release checklist and the limits of the automated checks. This repository does not currently declare a general open-source license; ask before treating the entire source or artwork collection as reusable.
 </details>
+
+
+## Repository integration: two independent browser experiences
+
+- **[Luna's First Project Pack](index.html)** is the current main experience with seven small tools, 20 prompts, a downloadable starter project and a Freebie Creator Kit.
+- **[Nexus Luna Toolkit Classic](classic/index.html)** preserves the former `main` dashboard, quick launcher, local usage information, backup/import data center and its own offline service worker.
+
+To run both from a local server: `python -m http.server 8080`. The Classic URL is `http://localhost:8080/classic/`. Their browser storage key prefixes are distinct.
+
+The tracked ZIP downloads distribute the First Project Pack, **not** Classic. The next packaged release should regenerate these archives with `npm run build` and commit the changed binary artifacts. Building/testing requires Node.js 18+, `zip` and `unzip`; opening either HTML app requires no build.
+
+The repository name reflects an earlier fan-project title and **does not imply affiliation** with the Global Partnership on Artificial Intelligence (GPAI), the OECD or other organisations. This repository is not an official institutional presentation.
+
+Read the [research analysis](docs/RESEARCH_ANALYSIS_2026-10-21.md), [integration and release notes](docs/INTEGRATION.md) and [public-safe repository scan](docs/REPO_SCAN.md).
 
 <p align="center"><em>Small beginnings, infinite possibilities.</em></p>
