@@ -154,7 +154,7 @@ try {
   writeFileSync(bundledIndex, page, "utf8");
 
   const bundledReadme = path.join(packStage, "README.md");
-  const standaloneReadme = readFileSync(bundledReadme, "utf8")
+  let standaloneReadme = readFileSync(bundledReadme, "utf8")
     .replace(
       '<a href="downloads/luna-first-project-pack.zip"><strong>Download the complete pack</strong></a>',
       '<a href="index.html"><strong>Open the website</strong></a>'
@@ -167,6 +167,15 @@ try {
       "1. Download the complete pack above, extract it, and open `index.html`.",
       "1. This extracted folder is already the complete pack—open `index.html`."
     );
+  // The integration links point to repository-only documentation and the
+  // preserved Classic app; they must not become broken links inside the ZIP.
+  const repositoryOnly = standaloneReadme.indexOf("## Repository integration: two independent browser experiences");
+  if (repositoryOnly !== -1) {
+    const footer = '<p align="center"><em>Small beginnings, infinite possibilities.</em></p>';
+    const footerIndex = standaloneReadme.indexOf(footer, repositoryOnly);
+    if (footerIndex < 0) throw new Error("Could not locate the pack README footer.");
+    standaloneReadme = standaloneReadme.slice(0, repositoryOnly) + standaloneReadme.slice(footerIndex);
+  }
   writeFileSync(bundledReadme, standaloneReadme, "utf8");
 
   const packagedStarterZip = path.join(packStage, "downloads/luna-launchpad-starter.zip");
