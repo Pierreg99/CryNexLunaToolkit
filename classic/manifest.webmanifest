@@ -1,0 +1,12 @@
+{
+  "name": "Nexus Luna Toolkit",
+  "short_name": "Luna Toolkit",
+  "description": "Seven local-first mini tools for AI, coding, Git and first projects.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#06101a",
+  "theme_color": "#06101a",
+  "lang": "de",
+  "categories": ["productivity", "education", "developer"]
+}

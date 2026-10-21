@@ -1,67 +1,114 @@
-# Nexus Luna Toolkit
+<p align="center">
+  <img src="assets/luna-pack-hero.png" alt="A moonlit, celestial creative landscape with luminous idea panels" width="100%">
+</p>
 
-A **local-first beginner toolkit** built as a fan present from recurring ideas across the Pierreg99 repository collection.
+<h1 align="center">Luna's First Project Pack</h1>
 
-The project is deliberately simple to run — plain HTML, CSS and JavaScript — but the experience is structured like a compact product dashboard rather than a loose demo page.
+<p align="center">
+  <strong>A quiet place to turn a small idea into a real first step.</strong><br>
+  Seven local tools, 20 worked prompts, an editable project, and a creator kit—made to open, keep, and make your own.
+</p>
 
-## What changed in the full overhaul
+<p align="center">
+  <a href="downloads/luna-first-project-pack.zip"><strong>Download the complete pack</strong></a>
+  · <a href="docs/START-HERE.md">Start in one minute</a>
+  · <a href="starter-project/index.html">Open Luna Launchpad</a>
+  · <a href="freebie-creator-kit/README.md">Explore the Creator Kit</a>
+</p>
 
-- Rebuilt information architecture with a **dashboard, launcher and focused tool sections**.
-- Added **global tool search** with `Ctrl/Cmd + K` quick focus.
-- Added local **usage stats**, project progress and board status in the dashboard.
-- Upgraded the Prompt Builder into **Prompt Studio** with four presets, draft persistence and a structure meter.
-- Expanded the terminal helper with **command search + category filtering**.
-- Added persistent local drafts for the mail and prompt tools.
-- Added a dedicated **JSON validation** action.
-- Preserved and polished the local Mini Kanban, Project Path and Luna Missions.
-- Added **backup export/import** for local browser data.
-- Added a minimal **service worker** and installable web app manifest for offline-friendly use.
-- Reworked the complete visual system: responsive glass/material surfaces, better hierarchy, stronger focus states, reduced-motion support and mobile layouts.
+> **Local-first by default.** No account, subscription, API key, analytics, or required service. The site works in a browser and the files remain yours to keep.
 
-## Toolkit
+## Choose your first path
 
-1. **Prompt Studio** — turn a rough idea into a structured prompt.
-2. **Terminal Guide** — safe beginner commands for Linux/macOS, PowerShell and Git.
-3. **Mail Starter** — build a simple German or English starter draft locally.
-4. **Mini Kanban** — local task board stored in the browser.
-5. **JSON Lab** — validate, format and minify JSON.
-6. **Project Path** — seven guided steps toward a useful first repository.
-7. **Luna Missions** — small coding and learning challenges.
+| I need… | Start here | What happens next |
+| --- | --- | --- |
+| A little momentum | Open [`index.html`](index.html) | Use a practical helper for prompts, tasks, e-mail, JSON, or project planning. |
+| A project I can understand | Open [Luna Launchpad](starter-project/index.html) | Add a goal, make one safe change, and follow a five-step walkthrough. |
+| A better freebie of my own | Open the [`Freebie Creator Kit`](freebie-creator-kit/README.md) | Shape one honest, useful resource with prompts, agent roles, skills, rules, and a release plan. |
 
-## Run locally
+## A small constellation of useful things
 
-You can open `index.html` directly for most functionality.
+| Make a next step | Learn by touching the code | Give something thoughtful |
+| --- | --- | --- |
+| **7 browser-local tools** for prompts, terminal basics, e-mail, a mini Kanban, JSON, a checklist, and tiny missions. | **Luna Launchpad** is a complete HTML/CSS/JavaScript goal tracker with source, walkthrough, and manual checks. | **The Creator Kit** includes eight original guides, four bounded roles, four portable skills, profiles, rules, a plan, and a roadmap. |
+| **20 prompts** across learning, coding, planning, and troubleshooting—with hand-written illustrative examples. | **Three themes**, an optional local thank-you note, and desktop/phone wallpapers make the pack feel like a gift, not a funnel. | **Everything is deliberately small.** No cloud dependency is required for the core experience. |
 
-For service-worker/offline support, use a tiny local server:
+## Open it in under a minute
 
-```bash
+1. Download the complete pack above, extract it, and open `index.html`.
+2. Choose one path: try a tool, open Launchpad, or read the Creator Kit.
+3. Keep the files. Come back when your next idea needs a first step.
+
+Opening the files directly works in most browsers. If local browser storage behaves differently from expected, serve the folder temporarily:
+
+```sh
 python -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Then visit <http://localhost:8080>. No build step is needed to use the gift.
 
-## Privacy and storage
+## Pick the download that fits
 
-The toolkit has no account, backend or analytics dependency. Prompt drafts, mail drafts, tasks, checklist progress, theme and usage counters are stored in `localStorage`.
+| Download | Best for | Includes |
+| --- | --- | --- |
+| [`luna-first-project-pack.zip`](downloads/luna-first-project-pack.zip) | The whole experience | The website, all tools, prompts, Launchpad, Creator Kit, guides, wallpapers, and the two focused ZIPs. |
+| [`luna-freebie-creator-kit.zip`](downloads/luna-freebie-creator-kit.zip) | Designing a useful freebie | The eight guides and four `.agents/skills/` workflows, without the website tools. |
+| [`luna-launchpad-starter.zip`](downloads/luna-launchpad-starter.zip) | Starting to code | Only the editable goal tracker, README, and walkthrough. |
 
-The **Local Data Center** can export these settings as JSON and import them again later.
+## Why this pack feels different
 
-## Technical shape
+- **Small enough to finish.** The first version favors a real, visible outcome over a long list of features.
+- **Clear about its limits.** Prompt examples are illustrative, browser data stays local when storage is available, and no outcome is promised that the files cannot deliver.
+- **Built to keep.** The core experience does not depend on a login, a remote API, a platform account, or a recurring service.
 
-- Plain HTML5
-- Modern CSS with responsive layouts and reduced-motion handling
-- Vanilla JavaScript
-- LocalStorage persistence
-- Minimal Service Worker caching
-- Web App Manifest
-- No runtime package dependencies
+## Trust, privacy, and artwork
 
-## Inspiration
+The website stores small pieces of progress in the current browser's `localStorage` when available: theme, Kanban tasks, checklist and walkthrough progress, and the optional supporter name. Launchpad stores its goals locally too. Nothing is sent to a server by the site; there is no sign-in, cloud sync, or analytics.
 
-The initial account-wide scan covered **161 owned repositories** and identified recurring themes around AI, developer tooling, learning documentation, productivity, media and plugins. This repository turns several of those patterns into small beginner-friendly tools rather than copying full projects.
+The prompt examples are written examples, not live AI responses. If you paste material into an external AI service, that service's own privacy and retention settings apply—do not paste passwords, private keys, secrets, or confidential material into the prompts.
 
-See [`docs/REPO_SCAN.md`](docs/REPO_SCAN.md) for the original selection notes and inventory.
+The moon wallpapers are original artwork for this pack. The README hero visual is AI-assisted original artwork made for this repository. Check the exact terms of any third-party material before redistributing a modified copy. `docs/REPO_SCAN.md` is source-repository material and is intentionally excluded from every public download.
 
----
+<details>
+<summary><strong>For maintainers: build and validate the source repository</strong></summary>
 
-Made as a fan present for experimenting, learning and starting small.
+<br>
+
+The recipient ZIPs are already built and do not require Node.js. From a repository clone, Node.js 18+, `zip` and `unzip` are required to build and test the release archives:
+
+```sh
+npm run build   # regenerate the three deterministic ZIP files and docs/PROMPTS.md
+npm test        # syntax, content, source-link, and archive checks
+```
+
+No `npm install` is required. The main source locations are:
+
+```text
+index.html / styles.css / app.js    The standalone gift website
+data/prompts.js                     Source for the 20 prompt cards
+freebie-creator-kit/                Creator-kit source documents
+.agents/skills/                     Four portable Codex-compatible skill files
+starter-project/                    Editable Launchpad source and walkthrough
+assets/                             Moon artwork, wallpapers, and README hero visual
+scripts/                            Reproducible packaging and repository checks
+downloads/                          Tracked recipient-facing ZIP artifacts
+```
+
+[`docs/TESTING.md`](docs/TESTING.md) records the manual release checklist and the limits of the automated checks. This repository does not currently declare a general open-source license; ask before treating the entire source or artwork collection as reusable.
+</details>
+
+
+## Repository integration: two independent browser experiences
+
+- **[Luna's First Project Pack](index.html)** is the current main experience with seven small tools, 20 prompts, a downloadable starter project and a Freebie Creator Kit.
+- **[Nexus Luna Toolkit Classic](classic/index.html)** preserves the former `main` dashboard, quick launcher, local usage information, backup/import data center and its own offline service worker.
+
+To run both from a local server: `python -m http.server 8080`. The Classic URL is `http://localhost:8080/classic/`. Their browser storage key prefixes are distinct.
+
+The tracked ZIP downloads distribute the First Project Pack, **not** Classic. The next packaged release should regenerate these archives with `npm run build` and commit the changed binary artifacts. Building/testing requires Node.js 18+, `zip` and `unzip`; opening either HTML app requires no build.
+
+The repository name reflects an earlier fan-project title and **does not imply affiliation** with the Global Partnership on Artificial Intelligence (GPAI), the OECD or other organisations. This repository is not an official institutional presentation.
+
+Read the [research analysis](docs/RESEARCH_ANALYSIS_2026-10-21.md), [integration and release notes](docs/INTEGRATION.md) and [public-safe repository scan](docs/REPO_SCAN.md).
+
+<p align="center"><em>Small beginnings, infinite possibilities.</em></p>

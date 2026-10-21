@@ -1,208 +1,188 @@
 <!doctype html>
-<html lang="de" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07101b">
-  <meta name="description" content="Nexus Luna Toolkit — sieben lokale Mini-Tools für AI, Coding, Git, Produktivität und erste Projekte.">
-  <meta name="color-scheme" content="dark light">
-  <title>Nexus Luna Toolkit</title>
+  <meta name="theme-color" content="#0b0f16">
+  <meta name="description" content="A local-first Luna early supporter pack: seven tools, 20 worked prompts, an editable first project, and a creator kit to keep.">
+  <title>Luna's First Project Pack</title>
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/moon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/luna-pack-hero.webp" type="image/webp">
   <link rel="stylesheet" href="styles.css">
+  <script src="data/prompts.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt</a>
-
-  <header class="topbar" aria-label="Hauptnavigation">
-    <a class="brand" href="#top" aria-label="Nexus Luna Toolkit Start">
-      <span class="brand-mark" aria-hidden="true">N</span>
-      <span class="brand-copy"><strong>Nexus Luna</strong><small>Local Starter Toolkit</small></span>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Home">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span><strong>Nexus Luna</strong><small>First Project Pack</small></span>
     </a>
-
-    <nav class="topnav" aria-label="Bereiche">
-      <a href="#launcher">Launcher</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="#data-center">Daten</a>
-    </nav>
-
     <div class="top-actions">
-      <span class="connection-badge" id="connectionBadge"><span aria-hidden="true"></span>lokal</span>
-      <button class="icon-button" id="searchShortcut" type="button" aria-label="Tool-Suche öffnen" title="Tool-Suche (Strg/⌘ + K)">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
-      </button>
-      <button class="icon-button" id="themeToggle" type="button" aria-label="Farbschema wechseln" title="Farbschema wechseln">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.45-.03-.9-.1-1.33A7 7 0 0 1 12 3Z"/></svg>
-      </button>
+      <nav class="top-nav" aria-label="Pack sections"><a href="#path">Start here</a><a href="#library">Prompts</a><a href="#creator-kit">Creator kit</a><a href="#project">First project</a><a href="#gifts">Tools</a><a href="#supporter">Your gift</a></nav>
+      <span class="local-badge">Free. Yours to keep.</span>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Switch color theme">◐</button>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
+    <section class="hero hero-editorial" id="top">
       <div class="hero-copy">
-        <p class="eyebrow">Fan Present · Rebuilt as a local-first dashboard</p>
-        <h1 id="hero-title">Kleine Tools.<br><span>Großer Start.</span></h1>
-        <p class="hero-text">Sieben praktische Werkzeuge für Prompts, Terminal, E-Mails, Aufgaben, JSON und dein erstes Projekt — ohne Login, Backend oder Cloud-Pflicht.</p>
+        <p class="eyebrow">Early supporter edition · made to keep</p>
+        <h1>A small gift.<br><span>A real beginning.</span></h1>
+        <p class="hero-text">Your first idea deserves a first step. Find useful tools, worked prompts, a project to make your own, and a bonus kit for making thoughtful freebies.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#launcher">Toolkit starten</a>
-          <button class="button secondary" id="randomTool" type="button">Überrasch mich</button>
+          <a class="button primary" href="downloads/luna-first-project-pack.zip" download>Download the whole pack ↓</a>
+          <a class="button secondary" href="#path">Choose your first step →</a>
         </div>
-        <div class="hero-trust" aria-label="Eigenschaften">
-          <span><b>100%</b> Browser-local</span>
-          <span><b>0</b> Runtime-Dependencies</span>
-          <span><b>7</b> Mini-Tools</span>
-        </div>
+        <ul class="hero-proof" aria-label="Pack promises"><li>No signup</li><li>Works locally</li><li>Free to keep</li></ul>
       </div>
-
-      <div class="nexus-visual" aria-hidden="true">
-        <div class="nexus-ring ring-a"></div>
-        <div class="nexus-ring ring-b"></div>
-        <div class="nexus-ring ring-c"></div>
-        <div class="nexus-core"><strong>7</strong><span>TOOLS</span></div>
-        <i class="node node-1"></i><i class="node node-2"></i><i class="node node-3"></i><i class="node node-4"></i>
+      <div class="hero-visual" aria-hidden="true">
+        <picture><source srcset="assets/luna-pack-hero.webp" type="image/webp"><img src="assets/luna-pack-hero.png" alt="" width="1672" height="940" fetchpriority="high"></picture>
+        <span class="hero-visual-glow glow-one"></span><span class="hero-visual-glow glow-two"></span>
+        <div class="hero-visual-stamp"><span>LOCAL-FIRST</span><strong>Open. Make. Keep.</strong></div>
+        <div class="hero-visual-count"><strong>20</strong><span>worked prompts<br>ready to adapt</span></div>
       </div>
     </section>
 
-    <section class="dashboard-strip" aria-label="Toolkit Status">
-      <article><span class="metric-label">Dein Fortschritt</span><strong id="dashboardProgress">0%</strong><small>Projekt-Checkliste</small></article>
-      <article><span class="metric-label">Board</span><strong id="dashboardTasks">1</strong><small>lokale Aufgaben</small></article>
-      <article><span class="metric-label">Genutzt</span><strong id="dashboardUses">0</strong><small>Tool-Aktionen</small></article>
-      <article><span class="metric-label">Status</span><strong id="dashboardStatus">Ready</strong><small>keine Cloud nötig</small></article>
+    <section class="intro-strip" aria-label="Inside your free pack">
+      <div><strong><em>07</em> tools</strong><span>Small everyday helpers</span></div>
+      <div><strong><em>20</em> prompts</strong><span>With worked examples</span></div>
+      <div><strong><em>01</em> project</strong><span>Learn by making it yours</span></div>
+      <div><strong>Yours to keep</strong><span>Download, open, start</span></div>
     </section>
-
-    <section class="launcher" id="launcher" aria-labelledby="launcher-title">
-      <div class="section-heading split-heading">
-        <div>
-          <p class="eyebrow">Launcher</p>
-          <h2 id="launcher-title">Was willst du heute bauen?</h2>
-          <p>Suche nach einem Werkzeug oder springe direkt in einen Bereich.</p>
-        </div>
-        <label class="search-box" for="toolSearch">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
-          <input id="toolSearch" type="search" placeholder="Tool suchen …" autocomplete="off">
-          <kbd>⌘K</kbd>
-        </label>
+    <section class="path-panel" id="path" aria-labelledby="pathHeading">
+      <div class="path-intro"><p class="eyebrow">Choose your first step</p><h2 id="pathHeading">Start wherever you are.</h2><p>There is no right order. Pick the smallest useful thing for today, then come back when you are ready for the next one.</p></div>
+      <div class="path-grid">
+        <a class="path-card" href="#gifts"><span class="path-number">01</span><strong>Need a small helper?</strong><small>Try the local tools for prompts, e-mail, JSON, tasks, and more.</small><span class="path-arrow" aria-hidden="true">↗</span></a>
+        <a class="path-card" href="#project"><span class="path-number">02</span><strong>Want to learn by making?</strong><small>Open Luna Launchpad, change one thing, and follow the five-step tour.</small><span class="path-arrow" aria-hidden="true">↗</span></a>
+        <a class="path-card" href="#creator-kit"><span class="path-number">03</span><strong>Making a gift of your own?</strong><small>Use the creator kit to shape a useful, honest freebie with clear boundaries.</small><span class="path-arrow" aria-hidden="true">↗</span></a>
       </div>
-
-      <div class="launcher-grid" id="launcherGrid">
-        <a class="launch-card" data-search="prompt ai lernen coding planen" href="#prompt-tool"><span>01</span><div><strong>Prompt Studio</strong><small>Idee → klarer Prompt</small></div><b aria-hidden="true">↗</b></a>
-        <a class="launch-card" data-search="terminal shell linux windows powershell git commands" href="#terminal-tool"><span>02</span><div><strong>Terminal Guide</strong><small>Sichere Einstiegsbefehle</small></div><b aria-hidden="true">↗</b></a>
-        <a class="launch-card" data-search="email mail deutsch english text communication" href="#email-tool"><span>03</span><div><strong>Mail Starter</strong><small>Schneller sauberer Entwurf</small></div><b aria-hidden="true">↗</b></a>
-        <a class="launch-card" data-search="kanban task aufgaben todo produktivitaet board" href="#kanban-tool"><span>04</span><div><strong>Mini Kanban</strong><small>Planen ohne Account</small></div><b aria-hidden="true">↗</b></a>
-        <a class="launch-card" data-search="json developer format validate minify code" href="#json-tool"><span>05</span><div><strong>JSON Lab</strong><small>Validieren & formatieren</small></div><b aria-hidden="true">↗</b></a>
-        <a class="launch-card" data-search="projekt checklist github repo lernen first repository" href="#project-tool"><span>06</span><div><strong>Project Path</strong><small>Vom Plan zum ersten Repo</small></div><b aria-hidden="true">↗</b></a>
-        <a class="launch-card" data-search="mission challenge lernen coding inspiration zufall" href="#mission-tool"><span>07</span><div><strong>Luna Missions</strong><small>Kleine nächste Herausforderung</small></div><b aria-hidden="true">↗</b></a>
-      </div>
-      <p class="empty-search" id="emptySearch" hidden>Kein Tool passt zu dieser Suche.</p>
     </section>
+    <nav class="mobile-pack-nav" aria-label="Jump to a gift"><a href="#path">Start here</a><a href="#library">20 prompts</a><a href="#creator-kit">Creator kit</a><a href="#project">First project</a><a href="#gifts">7 tools</a><a href="#supporter">Your gift</a></nav>
+    <p class="storage-notice" id="storageNotice" role="status" hidden>Browser storage is unavailable. You can keep using the tools, but new progress will stay in memory until you close or reload this page.</p>
+    <noscript><p class="no-script-notice">JavaScript is off, so the interactive helpers are unavailable. You can still use the <a href="docs/PROMPTS.md">20 prompts</a>, guides, wallpapers, and downloads.</p></noscript>
 
-    <section class="toolkit" id="toolkit" aria-labelledby="toolkit-title">
-      <div class="section-heading">
-        <p class="eyebrow">Local Toolkit</p>
-        <h2 id="toolkit-title">Sieben Werkzeuge. Ein ruhiger Workflow.</h2>
-        <p>Jedes Tool löst genau ein kleines Problem. Fortschritt und Eingaben bleiben auf deinem Gerät.</p>
-      </div>
+    <section class="section-heading" id="library" aria-labelledby="libraryHeading">
+      <p class="eyebrow">01 / A little direction</p>
+      <h2 id="libraryHeading">A blank page?<br>Start with a good prompt.</h2>
+      <p>Twenty starting points for learning, coding, planning, and getting unstuck. Replace the brackets, then use a prompt with your preferred AI tool. Examples are illustrative, not live AI responses.</p>
+    </section>
+    <section class="library-panel" aria-labelledby="libraryHeading">
+      <div class="library-controls"><label class="search-label" for="promptSearch">Find a starting point<input id="promptSearch" type="search" placeholder="Try learning, Git, or first project…" autocomplete="off"></label><a class="button secondary" href="docs/PROMPTS.md" download>Keep all 20 prompts ↓</a></div>
+      <div class="filter-row" role="group" aria-label="Prompt category"><button class="chip prompt-filter" type="button" data-category="All" aria-pressed="true">All <span>20</span></button><button class="chip prompt-filter" type="button" data-category="Learning" aria-pressed="false">Learning <span>5</span></button><button class="chip prompt-filter" type="button" data-category="Coding" aria-pressed="false">Coding <span>5</span></button><button class="chip prompt-filter" type="button" data-category="Planning" aria-pressed="false">Planning <span>5</span></button><button class="chip prompt-filter" type="button" data-category="Troubleshooting" aria-pressed="false">Troubleshooting <span>5</span></button></div>
+      <p class="result-count" id="promptCount" role="status">20 prompts to make a start.</p><div class="prompt-grid" id="promptLibrary"></div><p class="empty-library" id="promptEmpty" hidden>No prompts found. Try another word or choose All.</p><noscript><p><a href="docs/PROMPTS.md">Read all 20 prompts and examples here.</a></p></noscript>
+    </section>
+    <section class="creator-kit section-heading" id="creator-kit" aria-labelledby="creatorKitHeading">
+      <p class="eyebrow">BONUS / A little kit for the next gift</p>
+      <h2 id="creatorKitHeading">Make something useful.<br>Keep it kind.</h2>
+      <p>Want to make a freebie of your own? Start with one real need, then shape a small, honest gift around it. This copy-ready kit keeps the whole process connected.</p>
+      <article class="creator-kit-panel">
+        <div><p class="kicker">The Freebie Creator Kit</p><h3>From one small idea<br>to a thoughtful gift.</h3><p>Eight original prompts, four bounded agent roles, four Codex-compatible skills, privacy-first rules, three recipient profiles, a five-session plan, and a 90-day roadmap. Adapt it for any AI assistant—or use it without AI.</p></div>
+        <figure class="creator-kit-art" aria-hidden="true"><picture><source srcset="assets/luna-pack-hero.webp" type="image/webp"><img src="assets/luna-pack-hero.png" alt="" loading="lazy" width="1672" height="940"></picture><figcaption>One need. One useful gift. One honest next step.</figcaption></figure>
+        <div class="creator-kit-actions"><a class="button primary" href="downloads/luna-freebie-creator-kit.zip" download>Download the creator kit ↓</a><a class="button secondary" href="freebie-creator-kit/README.md">Preview what's inside →</a></div>
+      </article>
+    </section>
+    <section class="section-heading" id="project" aria-labelledby="projectHeading"><p class="eyebrow">02 / Your first little build</p><h2 id="projectHeading">Meet your<br>Luna Launchpad.</h2><p>A tiny daily goal tracker, a working example, and a five-step walkthrough. Take it apart. Make it yours.</p></section>
+    <section class="project-panel" aria-labelledby="projectHeading">
+      <div class="project-preview"><p class="kicker">A preview of your first project</p><div class="preview-moon" aria-hidden="true">☾</div><h3>One small step.<br><span>Then another.</span></h3><p>Add a goal. Complete it. Learn how the pieces work.</p><a class="button primary" href="starter-project/index.html" target="_blank" rel="noopener">Open the working project →</a><a class="preview-download" href="downloads/luna-launchpad-starter.zip" download>Download the editable project ↓</a><p class="project-facts">Plain HTML + CSS + JavaScript · No install · Keeps goals in this browser</p></div>
+      <div class="project-guide"><div class="guide-heading"><p class="kicker">Your 30–45 minute walkthrough</p><span id="guideProgress" role="status">0 of 5 steps</span></div><ol class="guide-steps">
+        <li><label><input type="checkbox" data-guide-step="0"><span><strong>Open it. Try one goal.</strong><small>Open the working project. Meet index.html, styles.css, and app.js.</small></span></label><p>Change the heading, save, and reload. Your words, your first change.</p></li>
+        <li><label><input type="checkbox" data-guide-step="1"><span><strong>Meet the data.</strong><small>A goal is an object with a title and a done flag.</small></span></label><code>{ "title": "Read one page", "done": false }</code></li>
+        <li><label><input type="checkbox" data-guide-step="2"><span><strong>Follow one click.</strong><small>The form adds a goal, saves it, and redraws the list.</small></span></label><p>Try &lt;b&gt;Read&lt;/b&gt;. It appears as text because the code uses textContent.</p></li>
+        <li><label><input type="checkbox" data-guide-step="3"><span><strong>Keep your progress.</strong><small>Complete a goal and reload. Browser storage remembers it.</small></span></label><p>Your goals stay in this browser, not in the cloud.</p></li>
+        <li><label><input type="checkbox" data-guide-step="4"><span><strong>Make it yours.</strong><small>Choose a new color or a better empty-state message.</small></span></label><p>Next mission: add a “Hide completed goals” filter. The full walkthrough has hints.</p></li>
+      </ol><a class="guide-link" href="starter-project/WALKTHROUGH.md">Read the full walkthrough →</a><button class="text-button" id="resetGuide" type="button">Reset these five steps</button></div>
+    </section>
+    <section class="section-heading" id="gifts" aria-labelledby="giftsHeading"><p class="eyebrow">03 / Your everyday toolkit</p><h2 id="giftsHeading">Little tools.<br>Useful right away.</h2><p>Seven everyday helpers. Try them here or in the downloaded pack.</p></section>
 
-      <article class="tool-panel feature-panel" id="prompt-tool" data-tool="prompt">
-        <div class="panel-head">
-          <div class="tool-id">01</div>
-          <div><p class="kicker">AI Starter</p><h3>Prompt Studio</h3><p>Strukturiere eine rohe Idee in Rolle, Ziel, Kontext, Regeln und Ausgabe.</p></div>
-          <span class="panel-tag">LOCAL</span>
-        </div>
-        <div class="preset-row" aria-label="Prompt Vorlagen">
-          <button class="chip prompt-preset" data-preset="learn" type="button">Lernen</button>
+    <section class="tool-grid" aria-labelledby="giftsHeading">
+      <article class="tool-card wide">
+        <div class="tool-head"><div class="tool-number">01</div><div><p class="kicker">AI Starter</p><h3>Prompt Builder</h3><p>Shape an idea into a clear prompt with a role, goal, context, and output.</p></div></div>
+        <div class="preset-row">
+          <button class="chip prompt-preset" data-preset="learn" type="button">Learn</button>
           <button class="chip prompt-preset" data-preset="code" type="button">Coding</button>
-          <button class="chip prompt-preset" data-preset="plan" type="button">Projektplan</button>
-          <button class="chip prompt-preset" data-preset="review" type="button">Review</button>
+          <button class="chip prompt-preset" data-preset="plan" type="button">Project plan</button>
         </div>
         <div class="form-grid two">
-          <label>Rolle<input id="promptRole" data-draft="promptRole" placeholder="z. B. geduldiger Coding-Mentor"></label>
-          <label>Ziel<input id="promptGoal" data-draft="promptGoal" placeholder="Was soll erreicht werden?"></label>
-          <label>Kontext<textarea id="promptContext" data-draft="promptContext" rows="3" placeholder="Was sollte die KI wissen?"></textarea></label>
-          <label>Regeln / Grenzen<textarea id="promptRules" data-draft="promptRules" rows="3" placeholder="z. B. einfach erklären, keine Schritte überspringen"></textarea></label>
-          <label class="span-two">Gewünschte Ausgabe<input id="promptOutput" data-draft="promptOutput" placeholder="z. B. kurze Schritte + Beispiel + Checkliste"></label>
+          <label>Role<input id="promptRole" placeholder="e.g. a patient coding mentor"></label>
+          <label>Goal<input id="promptGoal" placeholder="What would you like to achieve?"></label>
+          <label>Context<textarea id="promptContext" rows="3" placeholder="What should the AI know?"></textarea></label>
+          <label>Rules / limits<textarea id="promptRules" rows="3" placeholder="e.g. explain simply, skip no steps"></textarea></label>
+          <label class="span-two">Desired output<input id="promptOutput" placeholder="e.g. short steps and a worked example"></label>
         </div>
-        <div class="quality-row"><span>Prompt-Struktur</span><div class="mini-progress"><i id="promptQualityBar"></i></div><strong id="promptQuality">0%</strong></div>
-        <div class="action-row"><button class="button primary" id="buildPrompt" type="button">Prompt bauen</button><button class="button secondary" id="copyPrompt" type="button">Kopieren</button><button class="text-button" id="clearPrompt" type="button">Leeren</button></div>
-        <pre class="output" id="promptResult" aria-live="polite">Dein strukturierter Prompt erscheint hier.</pre>
+        <div class="action-row"><button class="button primary" id="buildPrompt" type="button">Build my prompt</button><button class="button secondary" id="copyPrompt" type="button">Copy</button></div>
+        <pre class="output" id="promptResult" aria-live="polite">Your structured prompt will appear here.</pre>
       </article>
 
-      <div class="tool-columns">
-        <article class="tool-panel" id="terminal-tool" data-tool="terminal">
-          <div class="panel-head compact-head"><div class="tool-id">02</div><div><p class="kicker">Command Pocket</p><h3>Terminal Guide</h3><p>Sichere Einstiegsbefehle mit kurzer Erklärung.</p></div></div>
-          <div class="filter-row">
-            <label>Bereich<select id="commandFilter"><option value="all">Alle</option><option value="linux">Linux / macOS</option><option value="windows">PowerShell</option><option value="git">Git</option></select></label>
-            <label>Suche<input id="commandSearch" type="search" placeholder="z. B. status"></label>
-          </div>
-          <div class="command-list" id="commandList"></div>
-        </article>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-number">02</div><div><p class="kicker">Command Pocket</p><h3>Terminal Quickstart</h3><p>A few everyday commands, with a plain explanation of each.</p></div></div>
+        <label>Platform<select id="commandFilter"><option value="all">All commands</option><option value="linux">Linux / macOS</option><option value="windows">Windows PowerShell</option><option value="git">Git</option></select></label>
+        <div class="command-list" id="commandList"></div>
+      </article>
 
-        <article class="tool-panel" id="email-tool" data-tool="email">
-          <div class="panel-head compact-head"><div class="tool-id">03</div><div><p class="kicker">Communication</p><h3>Mail Starter</h3><p>Lokale Vorlagen ohne AI-Call.</p></div></div>
-          <div class="form-grid">
-            <div class="form-grid two compact-grid">
-              <label>Sprache<select id="emailLang" data-draft="emailLang"><option value="de">Deutsch</option><option value="en">English</option></select></label>
-              <label>Anlass<select id="emailPurpose" data-draft="emailPurpose"><option value="question">Frage</option><option value="feedback">Feedback</option><option value="meeting">Termin</option><option value="thanks">Danke</option></select></label>
-            </div>
-            <label>Anrede / Name<input id="emailName" data-draft="emailName" placeholder="z. B. Frau Müller"></label>
-            <label>Kernpunkt<textarea id="emailPoint" data-draft="emailPoint" rows="4" placeholder="Worum geht es konkret?"></textarea></label>
-          </div>
-          <div class="action-row"><button class="button primary" id="buildEmail" type="button">Entwurf erstellen</button><button class="button secondary" id="copyEmail" type="button">Kopieren</button></div>
-          <pre class="output compact" id="emailResult" aria-live="polite">Dein E-Mail-Starter erscheint hier.</pre>
-        </article>
-      </div>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-number">03</div><div><p class="kicker">Communication</p><h3>E-mail Starter</h3><p>A friendly local template to help you find your first few words.</p></div></div>
+        <div class="form-grid">
+          <label>Language<select id="emailLang"><option value="en">English</option><option value="de">Deutsch</option></select></label>
+          <label>Name<input id="emailName" placeholder="e.g. Alex"></label>
+          <label>Purpose<select id="emailPurpose"><option value="question">Ask a question</option><option value="feedback">Give feedback</option><option value="meeting">Request a meeting</option><option value="thanks">Say thank you</option></select></label>
+          <label>Key point<textarea id="emailPoint" rows="3" placeholder="What is it about?"></textarea></label>
+        </div>
+        <div class="action-row"><button class="button primary" id="buildEmail" type="button">Create a draft</button><button class="button secondary" id="copyEmail" type="button">Copy</button></div>
+        <pre class="output compact" id="emailResult" aria-live="polite">Your e-mail starter will appear here.</pre>
+      </article>
 
-      <article class="tool-panel feature-panel" id="kanban-tool" data-tool="kanban">
-        <div class="panel-head"><div class="tool-id">04</div><div><p class="kicker">Local Productivity</p><h3>Mini Kanban</h3><p>Ein kleines Board mit persistentem Browser-Speicher.</p></div><span class="panel-tag" id="taskCountTag">1 TASK</span></div>
+      <article class="tool-card wide">
+        <div class="tool-head"><div class="tool-number">04</div><div><p class="kicker">Local productivity</p><h3>Mini Kanban</h3><p>Write a next step, move it along, and see what you have finished. Saved in this browser.</p></div></div>
         <form class="task-form" id="taskForm">
-          <label class="grow">Neue Aufgabe<input id="taskInput" required maxlength="100" placeholder="z. B. README verbessern"></label>
-          <label>Start<select id="taskColumn"><option value="todo">To do</option><option value="doing">Doing</option><option value="done">Done</option></select></label>
-          <button class="button primary" type="submit">Hinzufügen</button>
+          <label class="grow">New task<input id="taskInput" required maxlength="100" placeholder="e.g. Make the README clearer"></label>
+          <label>Start in<select id="taskColumn"><option value="todo">To do</option><option value="doing">Doing</option><option value="done">Done</option></select></label>
+          <button class="button primary" type="submit">Add task</button>
         </form>
-        <div class="kanban-board" id="kanbanBoard" aria-live="polite"></div>
-        <button class="text-button danger" id="resetKanban" type="button">Board zurücksetzen</button>
+        <div class="kanban-board" id="kanbanBoard"></div>
+        <button class="text-button danger" id="resetKanban" type="button">Reset the board</button>
       </article>
 
-      <div class="tool-columns">
-        <article class="tool-panel" id="json-tool" data-tool="json">
-          <div class="panel-head compact-head"><div class="tool-id">05</div><div><p class="kicker">Developer Helper</p><h3>JSON Lab</h3><p>Validieren, formatieren und verkleinern.</p></div></div>
-          <label>JSON<textarea class="code-input" id="jsonInput" rows="12" spellcheck="false" placeholder='{"hello":"world"}'></textarea></label>
-          <div class="action-row wrap"><button class="button primary" id="formatJson" type="button">Formatieren</button><button class="button secondary" id="validateJson" type="button">Validieren</button><button class="button secondary" id="minifyJson" type="button">Minify</button><button class="button secondary" id="copyJson" type="button">Kopieren</button></div>
-          <p class="status" id="jsonStatus" aria-live="polite">Bereit.</p>
-        </article>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-number">05</div><div><p class="kicker">Developer helper</p><h3>JSON Helper</h3><p>Validate, format, or minify JSON. It all happens in your browser.</p></div></div>
+        <label>JSON<textarea class="code-input" id="jsonInput" rows="10" spellcheck="false" placeholder='{"hello":"world"}'></textarea></label>
+        <div class="action-row wrap"><button class="button primary" id="formatJson" type="button">Format</button><button class="button secondary" id="minifyJson" type="button">Minify</button><button class="button secondary" id="copyJson" type="button">Copy</button></div>
+        <p class="status" id="jsonStatus" aria-live="polite">Ready.</p>
+      </article>
 
-        <article class="tool-panel" id="project-tool" data-tool="project">
-          <div class="panel-head compact-head"><div class="tool-id">06</div><div><p class="kicker">First Repository</p><h3>Project Path</h3><p>Sieben Schritte bis zu einem vorzeigbaren Mini-Repo.</p></div></div>
-          <div class="progress-track" aria-hidden="true"><span id="checkProgressBar"></span></div>
-          <p class="progress-label" id="checkProgress">0 von 7 erledigt</p>
-          <div class="checklist" id="projectChecklist"></div>
-          <button class="text-button danger" id="resetChecklist" type="button">Fortschritt löschen</button>
-        </article>
-      </div>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-number">06</div><div><p class="kicker">First project</p><h3>First Project Checklist</h3><p>A small path from an idea to a first project you can show someone.</p></div></div>
+        <div class="progress-track" aria-hidden="true"><span id="checkProgressBar"></span></div>
+        <p class="progress-label" id="checkProgress">0 of 7 complete</p>
+        <div class="checklist" id="projectChecklist"></div>
+        <button class="text-button danger" id="resetChecklist" type="button">Reset the checklist</button>
+      </article>
 
-      <article class="tool-panel mission-panel" id="mission-tool" data-tool="mission">
-        <div class="panel-head"><div class="tool-id">07</div><div><p class="kicker">Tiny Challenge</p><h3>Luna Missions</h3><p>Wenn der nächste sinnvolle Schritt fehlt, wählt Luna eine kleine Aufgabe.</p></div><span class="panel-tag violet">RANDOM</span></div>
-        <div class="mission-layout">
-          <div class="mission-box"><span class="mission-label" id="missionLevel">BEGINNER</span><p id="missionText">Starte eine Mission und Luna wählt eine kleine Herausforderung.</p></div>
-          <div class="mission-actions"><button class="button primary" id="newMission" type="button">Neue Mission</button><button class="button secondary" id="copyMission" type="button">Mission kopieren</button></div>
-        </div>
+      <article class="tool-card mission-card wide">
+        <div class="tool-head"><div class="tool-number">07</div><div><p class="kicker">Tiny challenge</p><h3>Luna Mini Missions</h3><p>Something small to try when you don't know what to build next.</p></div></div>
+        <div class="mission-box"><span class="mission-label" id="missionLevel">BEGINNER</span><p id="missionText">Let Luna choose your next little mission.</p></div>
+        <button class="button primary" id="newMission" type="button">Find my next mission</button>
       </article>
     </section>
 
-    <section class="data-center" id="data-center" aria-labelledby="data-title">
-      <div class="data-copy"><p class="eyebrow">Local Data Center</p><h2 id="data-title">Deine Daten gehören dir.</h2><p>Board, Checkliste, Theme und Entwürfe liegen ausschließlich im Browser. Exportiere ein Backup oder importiere es auf einem anderen Gerät.</p></div>
-      <div class="data-actions">
-        <button class="button primary" id="exportData" type="button">Backup exportieren</button>
-        <label class="button secondary file-button" for="importData">Backup importieren<input id="importData" type="file" accept="application/json,.json"></label>
-        <button class="text-button danger" id="resetAllData" type="button">Alle lokalen Daten löschen</button>
+    <section class="section-heading" id="supporter" aria-labelledby="supporterHeading"><p class="eyebrow">04 / A little something just for you</p><h2 id="supporterHeading">You were here<br>at the beginning.</h2><p>That means something. Here's a thank-you, a moonlit theme, and a little piece of Luna for your screen.</p></section>
+    <section class="supporter-grid" aria-labelledby="supporterHeading">
+      <article class="thank-you-card"><p class="note-date">A NOTE FROM LUNA <span aria-hidden="true">✧</span></p><h3 id="thankYouGreeting">Dear early explorer,</h3><div id="thankYouMessage"><p>Thank you for being here while the ideas are still small and the possibilities are wide open.</p><p>I hope this little pack gives you a useful starting point, a moment of curiosity, and the confidence to make something of your own.</p><p>You don't have to build something big. Just start with something that matters to you.</p></div><p class="signature">With love,<br><strong>Luna ☾</strong></p><label for="supporterName">Make the note yours (optional)<input id="supporterName" maxlength="60" placeholder="Your first name" autocomplete="given-name"></label><button class="button secondary" id="downloadNote" type="button">Keep my thank-you note ↓</button></article>
+      <div class="supporter-extras"><article class="theme-card"><p class="kicker">Your early supporter theme</p><h3>A little moonlight.</h3><p>Choose a mood. We'll remember it in this browser.</p><div class="theme-choices" role="group" aria-label="Choose a color theme"><button type="button" class="theme-choice" data-theme-choice="dark" aria-pressed="true"><span class="theme-swatch dark-swatch"></span>Midnight</button><button type="button" class="theme-choice" data-theme-choice="light" aria-pressed="false"><span class="theme-swatch light-swatch"></span>Daybreak</button><button type="button" class="theme-choice" data-theme-choice="aurora" aria-pressed="false"><span class="theme-swatch aurora-swatch"></span>Luna Aurora</button></div></article>
+        <article class="wallpaper-card"><img src="assets/luna-wallpaper-desktop.svg" alt="A crescent moon with quiet stars and the words Small beginnings, infinite possibilities." loading="lazy" width="2560" height="1440"><div class="wallpaper-info"><p class="kicker">A small piece of Luna</p><h3>Space for your next idea.</h3><p>Original wallpaper, in desktop and phone sizes.</p><div class="action-row wrap"><a class="button secondary" href="assets/luna-wallpaper-desktop.png" download>Desktop PNG ↓</a><a class="button secondary" href="assets/luna-wallpaper-phone.png" download>Phone PNG ↓</a></div><p class="vector-links">Prefer a vector? <a href="assets/luna-wallpaper-desktop.svg" download>Desktop SVG</a> · <a href="assets/luna-wallpaper-phone.svg" download>Phone SVG</a></p></div></article>
       </div>
+    </section>
+    <section class="download-banner" aria-labelledby="downloadHeading"><div><p class="eyebrow">Packed and ready for you</p><h2 id="downloadHeading">Keep a little beginning.</h2><p>Seven tools, 20 prompts, the starter project, and the bonus Freebie Creator Kit—plus the walkthrough, theme, wallpapers, and thank-you note. One ZIP. Free to keep.</p></div><a class="button primary" href="downloads/luna-first-project-pack.zip" download>Take the whole pack ↓</a></section>
+
+    <section class="why">
+      <div><p class="eyebrow">The idea behind it</p><h2>Big ideas.<br>Small first steps.</h2></div>
+      <p>This little pack brings together practical ideas for learning, creative tools, and everyday projects. Start with one useful thing, learn how it works, and make it your own.</p>
     </section>
   </main>
 
-  <footer>
-    <div><strong>Nexus Luna Toolkit</strong><span>Fan Present · local-first · plain HTML/CSS/JS</span></div>
-    <a href="docs/REPO_SCAN.md">Repo-Scan</a>
-  </footer>
-
+  <footer><span>Nexus Luna · Independent learning project</span><span><a href="docs/START-HERE.md">Start here</a> · <a href="docs/PROMPTS.md">All 20 prompts</a> · <a href="freebie-creator-kit/README.md">Freebie Creator Kit</a> · Made for small beginnings.</span></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js" defer></script>
 </body>
