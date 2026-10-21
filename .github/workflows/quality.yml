@@ -4,12 +4,14 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   validate:
+    name: Validate source and archives
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,3 +26,35 @@ jobs:
         run: npm run build
       - name: Test newly generated downloads
         run: npm test
+
+  publish:
+    name: Commit rebuilt downloads to main
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Rebuild and validate release packages
+        run: |
+          npm run build
+          npm test
+      - name: Commit generated packages only if changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- docs/PROMPTS.md downloads/luna-first-project-pack.zip downloads/luna-freebie-creator-kit.zip downloads/luna-launchpad-starter.zip
+          if git diff --cached --quiet; then
+            echo "Download archives are already in sync."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "build: synchronize Luna downloads with main [skip ci]"
+          git push origin HEAD:main
