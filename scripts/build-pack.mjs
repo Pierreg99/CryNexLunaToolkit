@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { chmodSync, copyFileSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, utimesSync, writeFileSync } from "node:fs";
+import { chmodSync, copyFileSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import vm from "node:vm";
@@ -37,8 +37,17 @@ function writeArchive(folder, filename) {
   const stagedArchive = path.join(temporary, filename);
   execFileSync("zip", ["-q", "-X", stagedArchive, ...entries], { cwd: temporary, env: { ...process.env, TZ: "UTC" } });
   const destination = path.join(downloads, filename);
-  copyFileSync(stagedArchive, destination);
-  chmodSync(destination, 0o644);
+  // Validate a temporary copy before replacing the previous valid archive.
+  // Keeping both files in downloads/ ensures same-filesystem atomic rename.
+  const pending = path.join(downloads, "." + filename + ".new");
+  try {
+    copyFileSync(stagedArchive, pending);
+    execFileSync("unzip", ["-t", pending], { stdio: "ignore" });
+    chmodSync(pending, 0o644);
+    renameSync(pending, destination);
+  } finally {
+    rmSync(pending, { force: true });
+  }
   return destination;
 }
 

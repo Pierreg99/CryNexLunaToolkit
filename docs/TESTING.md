@@ -1,6 +1,6 @@
 # Testing and release checklist
 
-This repository is deliberately dependency-free. The checks below are split into fast automated checks, archive checks, and a small browser pass. They test the files a recipient actually receives without pretending that a script proves universal accessibility or browser compatibility.
+The recipient-facing browser files have no runtime dependencies. Building and testing the source archives requires Node.js 18+, `zip`, and `unzip`. The checks below are split into fast automated checks, archive checks, and a small browser pass. They test the files a recipient actually receives without pretending that a script proves universal accessibility or browser compatibility.
 
 ## Fast local checks
 

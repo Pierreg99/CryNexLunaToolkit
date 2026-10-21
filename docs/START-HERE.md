@@ -22,7 +22,7 @@ Or download `luna-launchpad-starter.zip` to keep just the editable goal tracker 
 
 If you are here to design a freebie, download `luna-freebie-creator-kit.zip` on its own. It contains the prompts, agent roles, rules, recipient profiles, plan, roadmap, and `.agents/skills/` workflows without the website tools.
 
-If you are running the source from a fresh clone, use `node scripts/build-pack.mjs` to make all three downloads. That optional step requires Node.js and the `zip` command. Opening the site never needs a build.
+If you are running the source from a fresh clone, use `node scripts/build-pack.mjs` to make all three downloads. That optional step requires Node.js and the `zip` and `unzip` commands. Opening the site never needs a build.
 
 For the full repository workflow, `npm test` also checks the prompt source, local links, skill metadata, archive contents, and private-file boundary. See [Testing and release](TESTING.md).
 

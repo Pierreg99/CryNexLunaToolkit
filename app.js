@@ -256,6 +256,7 @@
     board[columns[targetIndex].id].push(task);
     saveBoard();
     renderBoard();
+    toast("Task moved to " + columns[targetIndex].title + ".");
     var movedCard = $$(".task-card").filter(function (card) { return card.dataset.taskId === String(task.id); })[0];
     if (movedCard) {
       var action = movedCard.querySelector("button:not(:disabled)");
@@ -267,6 +268,7 @@
     board[from].splice(index, 1);
     saveBoard();
     renderBoard();
+    toast("Task removed.");
     $("#taskInput").focus();
   }
 
@@ -341,6 +343,7 @@
     input.value = "";
     saveBoard();
     renderBoard();
+    toast("Task added.");
     input.focus();
   });
 

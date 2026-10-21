@@ -47,7 +47,7 @@ main{width:min(1180px,calc(100% - 2rem));margin:0 auto}
 .hero-text{max-width:720px;color:var(--muted);font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.65;margin:1.6rem 0 0}
 .hero-actions,.action-row{display:flex;gap:.75rem;align-items:center}.hero-actions{margin-top:2rem;flex-wrap:wrap}
 .button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.72rem 1rem;border-radius:14px;border:1px solid transparent;text-decoration:none;cursor:pointer;font-weight:750}
-.button.primary{background:var(--accent);color:#07130f}:root[data-theme="light"] .button.primary{color:#fff}
+.button.primary{background:var(--accent);color:#07130f}:root[data-theme="light"] .button.primary{color:#102334}
 .button.secondary{background:var(--surface-2);color:var(--text);border-color:var(--line)}.button:hover{transform:translateY(-1px)}.button:active{transform:translateY(0)}
 .hero-orb{
   width:min(100%,330px);aspect-ratio:1;justify-self:center;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;align-content:center;gap:.4rem;position:relative;
