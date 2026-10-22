@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Quality and trust</title>
+  <desc id="desc">A shield with a check mark, representing validation and careful release.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080D26"/><stop offset="1" stop-color="#221540"/></linearGradient><linearGradient id="line" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#58F4EC"/><stop offset="1" stop-color="#EE84D6"/></linearGradient></defs>
+  <rect x="2" y="2" width="92" height="92" rx="24" fill="url(#bg)" stroke="#7C87B4" stroke-opacity=".7" stroke-width="2"/>
+  <circle cx="77" cy="20" r="3" fill="#EE84D6"/>
+  <g fill="none" stroke="url(#line)" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"><path d="M48 19l24 9v18c0 14-10 24-24 31-14-7-24-17-24-31V28z"/><path d="M36 47l8 8 17-18"/></g>
+</svg>
