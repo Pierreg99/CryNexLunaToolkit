@@ -133,6 +133,8 @@ try {
     ...creatorKitDocuments.map((name) => `freebie-creator-kit/${name}`),
     ...skillFiles,
     "assets/moon.svg", "assets/luna-pack-hero.png", "assets/luna-pack-hero.webp",
+    "assets/icons/tools.svg", "assets/icons/launchpad.svg", "assets/icons/prompts.svg",
+    "assets/icons/creator-kit.svg", "assets/icons/downloads.svg", "assets/icons/quality.svg",
     "assets/luna-wallpaper-desktop.svg", "assets/luna-wallpaper-phone.svg",
     "assets/luna-wallpaper-desktop.png", "assets/luna-wallpaper-phone.png",
     "starter-project/index.html", "starter-project/styles.css", "starter-project/app.js",
