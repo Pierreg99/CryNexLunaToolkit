@@ -131,7 +131,8 @@ The repository name reflects an earlier fan-project title and **does not imply a
 
 Read the [research analysis](docs/RESEARCH_ANALYSIS_2026-10-21.md), [integration and release notes](docs/INTEGRATION.md), and [public-safe repository scan](docs/REPO_SCAN.md).
 
+<p align="center"><em>Small beginnings, infinite possibilities.</em></p>
+
 <p align="center">
-  <em>Small beginnings, infinite possibilities.</em><br>
   <a href="#navigation">Back to navigation</a> · <a href="docs/START-HERE.md">Quick start</a> · <a href="docs/TESTING.md">Testing guide</a>
 </p>
