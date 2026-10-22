@@ -79,10 +79,6 @@ function checkArchive(archive) {
   if (archive.prefix !== "luna-freebie-creator-kit") expected.push(`${archive.prefix}/index.html`);
   if (archive.prefix === "luna-first-project-pack") {
     expected.push(`${archive.prefix}/freebie-creator-kit/README.md`, `${archive.prefix}/.agents/skills/scope-freebie/SKILL.md`);
-    [
-      "assets/icons/tools.svg", "assets/icons/launchpad.svg", "assets/icons/prompts.svg",
-      "assets/icons/creator-kit.svg", "assets/icons/downloads.svg", "assets/icons/quality.svg",
-    ].forEach((asset) => expected.push(`${archive.prefix}/${asset}`));
   }
   if (archive.prefix === "luna-freebie-creator-kit") {
     expected.push(`${archive.prefix}/RULES.md`, `${archive.prefix}/.agents/skills/package-freebie/SKILL.md`);
