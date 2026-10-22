@@ -85,6 +85,8 @@ The prompts are written examples, not live AI responses. If you paste material i
 
 The moon wallpapers are original artwork for this pack. The README hero visual is AI-assisted original artwork made for this repository. Review the terms of any third-party material before redistributing a modified copy. This repository does not currently declare a general open-source license for the complete source and artwork collection; do not assume that every item is licensed for unrestricted reuse.
 
+<a id="maintainers"></a>
+
 <details>
 <summary><strong>For maintainers: build and validate the source repository</strong></summary>
 
