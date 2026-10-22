@@ -4,7 +4,17 @@
 
 The user requested the complete Luna First Project Pack, autonomous upgrades, and a separate Git commit after every edited file. Keep that workflow for further work on this project. Preserve unrelated changes. Commit generated files individually when their content changes.
 
-## Current checkpoint — 2026-10-08
+## Current checkpoint — 2026-10-22
+
+The README now follows the Cryo Workflows dashboard principles: optimized local WebP hero, live Quality badge, six linked local SVG icons, clear product paths, resource cockpit, and explicit privacy/licensing boundaries. PR [#3](https://github.com/Pierreg99/CryNexLunaToolkit/pull/3) was merged as `ea4653f91a4262a869e6fa0db2e3f28be270359b`. The Quality workflow passed its test-before-build and test-after-build stages on PR head `ec42d9eca32fe94b549cbe0958ce7f41a80879b7`; the post-merge artifact synchronization commit is `1f9924608211e68f859920a70fb4554a8c48cb35`.
+
+The new README navigation icons are included in the full-pack archive. `scripts/check-repository.mjs` validates README HTML links/assets and archive references. Keep all README packaging markers compatible with `scripts/build-pack.mjs`; the source-only repository integration section must be removed from recipient downloads.
+
+Root-level `HANDOFF.md`, `HANDOVER.md`, `ROADMAP.md`, `PLAN.md`, and `CHANGELOG.md` hold the project state, continuation steps, delivery gates, and material changes. Update them when status or dependencies change. The explicit next gate is a manual visual review of the GitHub-rendered README at desktop and mobile widths; do not mark it complete based only on automated link/archive checks. No formal tagged release or deployment is asserted here.
+
+After changes to bundled source or guides, run `npm test`, `npm run build`, and `npm test` again. CI synchronizes changed generated artifacts on `main` after a successful push. Treat the resulting bot commit as separate, inspectable delivery evidence.
+
+## Historical checkpoint — 2026-10-08
 
 The pack is complete on `feat/luna-first-project-pack`: seven local tools, 20 prompts with worked examples, the editable Luna Launchpad goal tracker, a five-step walkthrough, three persisted themes, desktop and phone wallpapers in PNG and SVG, and a personalized downloadable thank-you. The feature branch has been pushed to GitHub at the user's request. Website deployment has not been performed.
 

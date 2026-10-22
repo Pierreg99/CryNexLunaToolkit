@@ -13,6 +13,7 @@ const creatorDocuments = [
 ];
 const skillNames = ["scope-freebie", "build-freebie", "review-freebie", "package-freebie"];
 const skillFiles = skillNames.map((name) => `.agents/skills/${name}/SKILL.md`);
+const governanceDocuments = ["HANDOFF.md", "HANDOVER.md", "ROADMAP.md", "PLAN.md", "CHANGELOG.md"];
 const archives = [
   { file: "downloads/luna-first-project-pack.zip", prefix: "luna-first-project-pack" },
   { file: "downloads/luna-freebie-creator-kit.zip", prefix: "luna-freebie-creator-kit" },
@@ -116,6 +117,7 @@ function checkArchive(archive) {
 }
 
 [
+  ...governanceDocuments,
   "README.md", "index.html", "styles.css", "app.js", "manifest.webmanifest",
   "data/prompts.js",
   "assets/icons/tools.svg", "assets/icons/launchpad.svg", "assets/icons/prompts.svg",
@@ -167,6 +169,7 @@ checkSourceLinks("README.md", /\[[^\]]+\]\(([^)]+)\)/g, "README Markdown");
 checkSourceLinks("README.md", /\b(?:href|src)="([^"]+)"/g, "README HTML");
 checkSourceLinks("docs/START-HERE.md", /\[[^\]]+\]\(([^)]+)\)/g, "Quick start");
 checkSourceLinks("freebie-creator-kit/README.md", /\[[^\]]+\]\(([^)]+)\)/g, "Creator kit README");
+governanceDocuments.forEach((relative) => checkSourceLinks(relative, /\[[^\]]+\]\(([^)]+)\)/g, relative));
 record("local links in source website and primary guides");
 
 if (/both downloads/i.test(read("docs/START-HERE.md"))) failures.push("Quick-start guide still refers to only two downloads.");
