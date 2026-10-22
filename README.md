@@ -118,7 +118,7 @@ Main source locations:
 
 </details>
 
-## 🧩 Repository integration: two independent browser experiences
+## Repository integration: two independent browser experiences
 
 - **[Luna's First Project Pack](index.html)** is the main experience: seven small tools, 20 prompts, the downloadable starter project, and the Freebie Creator Kit.
 - **[Nexus Luna Toolkit Classic](classic/index.html)** preserves the former `main` dashboard, quick launcher, local usage information, backup/import data center, and its own offline service worker.
