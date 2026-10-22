@@ -179,6 +179,18 @@ The tracked ZIP downloads distribute the First Project Pack, **not** Classic. Th
 
 The repository name reflects an earlier fan-project title and **does not imply affiliation** with the Global Partnership on Artificial Intelligence (GPAI), the OECD, or another organisation. This repository is not an official institutional presentation.
 
+## 🗂️ Project governance
+
+These maintainer references are part of the source repository and are intentionally excluded from recipient downloads.
+
+| Document | Purpose |
+| --- | --- |
+| [Plan](PLAN.md) | Priorities, delivery gates, and acceptance criteria |
+| [Roadmap](ROADMAP.md) | Milestones, evidence, and remaining work |
+| [Handoff](HANDOFF.md) | Current project state and next actions |
+| [Technical handover](HANDOVER.md) | Repeatable commands, packaging contracts, and recovery steps |
+| [Changelog](CHANGELOG.md) | Material changes, merged work, and pending documentation |
+
 Read the [research analysis](docs/RESEARCH_ANALYSIS_2026-10-21.md), [integration and release notes](docs/INTEGRATION.md), and [public-safe repository scan](docs/REPO_SCAN.md).
 
 <p align="center"><em>Small beginnings, infinite possibilities.</em></p>
