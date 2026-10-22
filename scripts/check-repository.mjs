@@ -102,12 +102,25 @@ function checkArchive(archive) {
       if (!members.has(resolved)) failures.push(`Archive Markdown link is missing: ${archive.file} -> ${entry} -> ${match[1]}`);
     }
   }
+  for (const entry of entries.filter((item) => item.endsWith(".md"))) {
+    const markdown = execFileSync("unzip", ["-p", path.join(root, archive.file), entry], { encoding: "utf8" });
+    for (const match of markdown.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
+      const target = withoutFragment(match[1].trim());
+      if (isExternal(target)) continue;
+      const resolved = path.posix.normalize(path.posix.join(path.posix.dirname(entry), target));
+      if (!members.has(resolved)) failures.push(`Archive HTML asset/link is missing: ${archive.file} -> ${entry} -> ${match[1]}`);
+    }
+  }
+
   record(`${archive.file} integrity, manifest, links, and exclusion checks`);
 }
 
 [
   "README.md", "index.html", "styles.css", "app.js", "manifest.webmanifest",
-  "data/prompts.js", "docs/START-HERE.md", "docs/PROMPTS.md", "docs/TESTING.md",
+  "data/prompts.js",
+  "assets/icons/tools.svg", "assets/icons/launchpad.svg", "assets/icons/prompts.svg",
+  "assets/icons/creator-kit.svg", "assets/icons/downloads.svg", "assets/icons/quality.svg",
+  "docs/START-HERE.md", "docs/PROMPTS.md", "docs/TESTING.md",
   ...creatorDocuments.map((name) => `freebie-creator-kit/${name}`),
   ...skillFiles,
   "starter-project/index.html", "starter-project/styles.css", "starter-project/app.js",
@@ -150,7 +163,8 @@ skillFiles.forEach((relative, index) => {
 record("four skill metadata headers");
 
 checkSourceLinks("index.html", /\b(?:href|src)="([^"]+)"/g, "Website");
-checkSourceLinks("README.md", /\[[^\]]+\]\(([^)]+)\)/g, "README");
+checkSourceLinks("README.md", /\[[^\]]+\]\(([^)]+)\)/g, "README Markdown");
+checkSourceLinks("README.md", /\b(?:href|src)="([^"]+)"/g, "README HTML");
 checkSourceLinks("docs/START-HERE.md", /\[[^\]]+\]\(([^)]+)\)/g, "Quick start");
 checkSourceLinks("freebie-creator-kit/README.md", /\[[^\]]+\]\(([^)]+)\)/g, "Creator kit README");
 record("local links in source website and primary guides");
