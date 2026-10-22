@@ -119,7 +119,7 @@ Choose the smallest package that fits your goal.
 
 | Orient | Explore | Create | Verify |
 | --- | --- | --- | --- |
-| [Quick start](docs/START-HERE.md) · [Prompt library](docs/PROMPTS.md) | [Launchpad source](starter-project/) · [Walkthrough](starter-project/WALKTHROUGH.md) | [Creator Kit](freebie-creator-kit/README.md) · [Downloads](#downloads) | [Testing guide](docs/TESTING.md) · [Quality workflow](https://github.com/Pierreg99/CryNexLunaToolkit/actions/workflows/quality.yml) |
+| [Quick start](docs/START-HERE.md) · [Prompt library](docs/PROMPTS.md) | [Launchpad source](starter-project/index.html) · [Walkthrough](starter-project/WALKTHROUGH.md) | [Creator Kit](freebie-creator-kit/README.md) · [Downloads](#downloads) | [Testing guide](docs/TESTING.md) · [Quality workflow](https://github.com/Pierreg99/CryNexLunaToolkit/actions/workflows/quality.yml) |
 
 ## 🌙 Design principles
 
