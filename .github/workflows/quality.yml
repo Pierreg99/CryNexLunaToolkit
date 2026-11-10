@@ -26,35 +26,20 @@ jobs:
         run: npm run build
       - name: Test newly generated downloads
         run: npm test
+      - name: Require generated assets to remain in sync
+        run: git diff --exit-code -- docs/PROMPTS.md downloads/
 
-  publish:
-    name: Commit rebuilt downloads to main
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: validate
+  browser:
+    name: Chromium browser and accessibility smoke
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Rebuild and validate release packages
-        run: |
-          npm run build
-          npm test
-      - name: Commit generated packages only if changed
-        shell: bash
-        run: |
-          set -euo pipefail
-          git add -- docs/PROMPTS.md downloads/luna-first-project-pack.zip downloads/luna-freebie-creator-kit.zip downloads/luna-launchpad-starter.zip
-          if git diff --cached --quiet; then
-            echo "Download archives are already in sync."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "build: synchronize Luna downloads with main [skip ci]"
-          git push origin HEAD:main
+      - name: Install isolated browser testing tools
+        run: npm install --no-save --package-lock=false playwright @axe-core/playwright
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Run desktop and emulated Android browser tests
+        run: node tests/browser-smoke.mjs
