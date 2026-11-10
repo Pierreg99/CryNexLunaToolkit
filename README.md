@@ -179,6 +179,12 @@ The tracked ZIP downloads distribute the First Project Pack, **not** Classic. Th
 
 The repository name reflects an earlier fan-project title and **does not imply affiliation** with the Global Partnership on Artificial Intelligence (GPAI), the OECD, or another organisation. This repository is not an official institutional presentation.
 
+## Proposed controlled free-use policy (under review)
+
+**Draft only — not an active license.** A no-fee, source-available model for local/private and internal-business use is proposed, with separate limitations for redistributing code, republishing documentation and reusing artwork. Existing rights and GitHub's view/fork terms remain unchanged until an authorized rights holder approves final terms.
+
+Read the [proposed terms](docs/PROPOSED_CONTROLLED_FREE_USE_TERMS.md) and the [rights/provenance inventory](docs/RIGHTS_INVENTORY_REVIEW.md). Do not treat the proposal as granted reuse rights or redistribute assets based on it.
+
 ## 🗂️ Project governance
 
 These maintainer references are part of the source repository and are intentionally excluded from recipient downloads.
